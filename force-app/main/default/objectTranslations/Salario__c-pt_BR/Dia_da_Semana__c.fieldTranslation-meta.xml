@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Dia da Semana --></label>
+    <name>Dia_da_Semana__c</name>
+    <picklistValues>
+        <masterLabel>Domingo,</masterLabel>
+        <translation><!-- Domingo, --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quarta,</masterLabel>
+        <translation><!-- Quarta, --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quinta,</masterLabel>
+        <translation><!-- Quinta, --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sabado</masterLabel>
+        <translation><!-- Sabado --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Segunda,</masterLabel>
+        <translation><!-- Segunda, --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sexta,</masterLabel>
+        <translation><!-- Sexta, --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Terca,</masterLabel>
+        <translation><!-- Terca, --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
