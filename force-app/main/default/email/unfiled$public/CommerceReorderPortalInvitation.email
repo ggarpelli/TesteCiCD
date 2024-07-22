@@ -1,0 +1,12 @@
+<html>
+            Prezado(a) {!Receiving_User.FirstName},
+            <p>
+            Confira este portal de novo pedido, que oferece uma maneira mais simples de fazer pedidos repetidos com {!Organization.Name}. Você pode visualizar seus pedidos anteriores, modificar quantidades, fazer novos pedidos e visualizar o status do pedido.
+            </p>
+            <p>
+            Clique no link para acessar:  <a href={!Community_URL}>{!Community_Name}</a>
+            Nome do usuário: {!Receiving_User.Username}
+            </p>
+            Atenciosamente,<br>
+            {!User.Name}
+            </html>

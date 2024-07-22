@@ -35,6 +35,26 @@
                 <default>false</default>
                 <label>torresming</label>
             </value>
+            <value>
+                <fullName>bubassalto1</fullName>
+                <default>false</default>
+                <label>bubassalto1</label>
+            </value>
+            <value>
+                <fullName>bubassalto2</fullName>
+                <default>false</default>
+                <label>bubassalto2</label>
+            </value>
+            <value>
+                <fullName>bubassalto3</fullName>
+                <default>false</default>
+                <label>bubassalto3</label>
+            </value>
+            <value>
+                <fullName>bubassalto4</fullName>
+                <default>true</default>
+                <label>bubassalto4</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
