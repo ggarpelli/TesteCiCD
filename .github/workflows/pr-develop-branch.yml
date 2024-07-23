@@ -47,7 +47,7 @@ jobs:
       - name: 'Installing java'
         run: |
           sudo apt-get update
-          sudo apt install default-jdk
+          sudo apt install openjdk-11-jdk
 
       - name: 'Installing SFDX scanner'
         run: sfdx plugins:install @salesforce/sfdx-scanner
