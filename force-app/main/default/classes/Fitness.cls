@@ -15,7 +15,7 @@ public class Fitness {
         Decimal pace =0;
         
         if((tempoMin <= 0) || (distanciaKm <= 0)){
-            System.debug('Dados de tempo ou distancia incompativel!!');  
+            System.debug('Dados de tempo ou distancia incompativel, reveja isso!!');  
         }else{
             //km por min
             pace = tempoMin/distanciaKm;
