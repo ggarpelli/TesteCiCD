@@ -56,14 +56,14 @@
                 <label>bubassalto4</label>
             </value>
             <value>
-                <fullName>bubassalto5</fullName>
+                <fullName>bubassaltos5</fullName>
                 <default>true</default>
-                <label>bubassalto5</label>
+                <label>bubassaltos5</label>
             </value>
             <value>
-                <fullName>bubassalto6</fullName>
+                <fullName>bubassaltos6</fullName>
                 <default>true</default>
-                <label>bubassalto6</label>
+                <label>bubassaltos6</label>
             </value>
         </valueSetDefinition>
     </valueSet>
