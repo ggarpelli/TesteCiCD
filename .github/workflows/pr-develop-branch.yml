@@ -49,9 +49,6 @@ jobs:
           sudo apt-get update
           sudo apt install openjdk-11-jdk
 
-      - name: 'Installing SFDX scanner'
-        run: sfdx plugins:install @salesforce/sfdx-scanner
-
       - name: 'Populate auth file with SFDX_URL secret of Dev org'
         shell: bash
         run: |
