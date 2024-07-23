@@ -12,7 +12,7 @@ public class Covid19 {
         this.recuperadosCidade = recuperadosCidade;
         recuperadosPais = recuperadosCidade;
     }
-    
+    //update
     public void pacientesTratados(){
         recuperadosCidade++;
         recuperadosPais++;        
