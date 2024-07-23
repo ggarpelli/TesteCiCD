@@ -55,6 +55,16 @@
                 <default>true</default>
                 <label>bubassalto4</label>
             </value>
+            <value>
+                <fullName>bubassalto5</fullName>
+                <default>true</default>
+                <label>bubassalto5</label>
+            </value>
+            <value>
+                <fullName>bubassalto6</fullName>
+                <default>true</default>
+                <label>bubassalto6</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
