@@ -55,6 +55,7 @@
                 <default>true</default>
                 <label>bubassalto4</label>
             </value>
+            <value>
                 <fullName>Feature3</fullName>
                 <default>true</default>
                 <label>Feature3</label>
