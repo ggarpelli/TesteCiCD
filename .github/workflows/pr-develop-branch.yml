@@ -1,10 +1,10 @@
-name: ValidatePR
+name: "Validate PR"
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - main
+      - "develop"
     paths:
       - 'force-app/**'
 
