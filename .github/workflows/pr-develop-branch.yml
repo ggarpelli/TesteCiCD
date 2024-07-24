@@ -30,6 +30,15 @@ jobs:
           node ./parsePR.js              
           TESTS=$(cat testsToRun.txt)       
           echo "APEX_TESTS=$TESTS" >> $GITHUB_ENV
+
+      - name: 'Store tests to run'
+        run: |
+          echo ${{ env.APEX_TESTS }} > tests_to_run.txt
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: tests_to_run
+          path: tests_to_run.txt
           
       - name: 'Install Salesforce CLI'
         run: |
