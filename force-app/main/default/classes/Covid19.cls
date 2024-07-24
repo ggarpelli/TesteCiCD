@@ -12,14 +12,14 @@ public class Covid19 {
         this.recuperadosCidade = recuperadosCidade;
         recuperadosPais = recuperadosCidade;
     }
-    
+    //update
     public void pacientesTratados(){
         recuperadosCidade++;
         recuperadosPais++;        
     } 
-    
+    //change feature3
     public Static void pacientesPais(){
-        System.debug('Numero de casos no Pais :' + recuperadosPais);
+        System.debug('Numero de casos no Pais é de :' + recuperadosPais);
     }
     
 }
