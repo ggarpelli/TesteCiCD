@@ -35,6 +35,8 @@ jobs:
         run: |
           echo ${{ env.APEX_TESTS }} > tests_to_run.txt
         if: success()
+
+      - name: 'Upload tests to run'  
         uses: actions/upload-artifact@v3
         with:
           name: tests_to_run
