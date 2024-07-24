@@ -7,6 +7,10 @@ on:
     paths:
       - 'force-app/**'
 
+permissions:
+  contents: read
+  security-events: write
+
 jobs:
   validate-deployment-on-develop-org:
     runs-on: ubuntu-latest
@@ -75,6 +79,8 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: changed-sources/apexScanResults.sarif
+          token: ${{ secrets.GITHUB_TOKEN }}
+          wait-for-processing: true
 
       - name: 'Check-only deploy delta changes - run specified tests'
         if: ${{ env.APEX_TESTS != 'all' }}
@@ -85,7 +91,7 @@ jobs:
       - name: 'Check-only deploy delta changes - run all tests'
         if: ${{ env.APEX_TESTS == 'all' }}
         run: |
-          sfdx force:source:deploy -p "changed-sources/force-app" --testlevel RunLocalTests  --json
+          sfdx force:source:deploy -p "changed-sources/force-app" --testlevel RunLocalTests --json
 
       - name: 'Deploy destructive changes (if any)'
         run: sfdx force:mdapi:deploy -d "changed-sources/destructiveChanges" --ignorewarnings
