@@ -59,14 +59,7 @@ jobs:
       - name: 'Create delta packages for new, modified or deleted metadata'
         run: | 
           mkdir changed-sources
-          BRANCH_ORIGEM=$(git rev-parse --abbrev-ref HEAD)
-          BRANCH_DESTINO=${{ github.base_ref }}
-          git fetch origin "+refs/heads/*:refs/remotes/origin/*"
-          BRANCH_DESTINO_SHA=$(git rev-parse origin/"$BRANCH_DESTINO")
-          echo "Branch de origem: $BRANCH_ORIGEM"
-          echo "Branch de destino: $BRANCH_DESTINO"
-          echo "SHA da branch de destino: $BRANCH_DESTINO_SHA"
-          sfdx sgd:source:delta --to "$BRANCH_ORIGEM" --from "$BRANCH_DESTINO_SHA" --output changed-sources/ --generate-delta --source force-app/ 
+          sfdx sgd:source:delta --to "HEAD" --from "HEAD~1" --output changed-sources/ --generate-delta
 
       - name: 'Scan code'
         run: |
