@@ -19,6 +19,7 @@ public class Empresa {
     }
     
     // Classe privada que vai armazenar o dado dos clientes. test
+    // Change FROM Feature2
     private class Client{
         Public String clientName;
         Public String webSite;
