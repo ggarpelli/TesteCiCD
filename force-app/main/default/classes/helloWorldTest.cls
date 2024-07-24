@@ -3,7 +3,7 @@ public class helloWorldTest {
     
     @isTest
     public Static void testImprimeQlkMensagem(){
-        
+        //new line
         helloWorld chamaClasse = new helloWorld();
         chamaClasse.imprimeQlkMensagem('ola',3213,'joao');
         chamaClasse.imprimeDay(0);
@@ -14,7 +14,7 @@ public class helloWorldTest {
         chamaClasse.imprimeDay('Ter');
         chamaClasse.imprimeDay('Ters');
         chamaClasse.primeiroMetodo();
-        //feature3
+        //to be included on Feature3
     }
     
 }
