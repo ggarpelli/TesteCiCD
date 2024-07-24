@@ -22,8 +22,10 @@ jobs:
           fetch-depth: 0
 
       - name: 'Download tests to run'
-        uses: actions/download-artifact@v3
+        uses: dawidd6/action-download-artifact@v6
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: validate-pr.yml
           name: tests_to_run
           path: .
           
