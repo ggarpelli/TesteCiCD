@@ -58,7 +58,7 @@
                 <fullName>Feature3</fullName>
                 <default>true</default>
                 <label>Feature3</label>
-             </value>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
