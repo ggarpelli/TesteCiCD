@@ -90,6 +90,9 @@ jobs:
           name: metadata
           path: changed-sources
 
+      - name: Installing SFDX scanner
+        run: sfdx plugins:install @salesforce/sfdx-scanner
+          
       - name: 'Scan code'
         run: |
           cd changed-sources
