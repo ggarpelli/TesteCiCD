@@ -15,7 +15,7 @@ public class AccountControllerTest {
         acc2.Name = 'Test Account 2';
         accounts.add(acc2);
         AccountController.insertAccounts(accounts); 
-    }
+    }//teste feature7
     
     @IsTest
     public static void getAllAccountsTest(){
