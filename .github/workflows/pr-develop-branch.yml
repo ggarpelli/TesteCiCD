@@ -106,7 +106,6 @@ jobs:
       - name: 'Initialize CodeQL'
         uses: github/codeql-action/init@v3
         with:
-          languages: apex
           config-file: .github/codeql/codeql-config.yml
 
       - name: 'Analyze SARIF file'
