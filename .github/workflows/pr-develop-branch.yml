@@ -80,6 +80,12 @@ jobs:
           echo "SHA da branch de destino: $BRANCH_DESTINO_SHA"
           sfdx sgd:source:delta --to "$BRANCH_ORIGEM" --from "$BRANCH_DESTINO_SHA" --output changed-sources/ --generate-delta --source force-app/ 
 
+      - name: 'Upload metadata artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: metadata
+          path: changed-sources/
+
       - name: 'Scan code'
         run: |
           cd changed-sources
