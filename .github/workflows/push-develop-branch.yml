@@ -12,7 +12,7 @@ permissions:
   security-events: write
 
 jobs:
-  validate-deployment-on-develop-org:
+  deployment-on-develop-org:
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
