@@ -16,12 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: '20.15.1'
 
       - name: 'Checkout source code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -68,6 +68,12 @@ jobs:
         run: | 
           mkdir changed-sources
           sfdx sgd:source:delta --to "HEAD" --from "HEAD~1" --output changed-sources/ --generate-delta
+
+      - name: 'Upload metadata artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: metadata
+          path: changed-sources
 
       - name: 'Scan code'
         run: |
