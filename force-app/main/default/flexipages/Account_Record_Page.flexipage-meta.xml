@@ -273,6 +273,12 @@
                 <identifier>RecordPokemon_cField3</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.BikeType__c</fieldItem>
+                <identifier>RecordBikeType__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-b10df4aa-7b38-467a-bf52-5797cb80fa0a</name>
         <type>Facet</type>
     </flexiPageRegions>
