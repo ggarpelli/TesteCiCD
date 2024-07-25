@@ -69,6 +69,12 @@ jobs:
           mkdir changed-sources
           sfdx sgd:source:delta --to "HEAD" --from "HEAD~1" --output changed-sources/ --generate-delta
 
+      - name: 'Upload metadata artifact'
+        uses: actions/upload-artifact@v3
+        with:
+          name: metadata
+          path: changed-sources
+
       - name: 'Scan code'
         run: |
           cd changed-sources
