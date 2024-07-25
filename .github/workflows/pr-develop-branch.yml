@@ -96,12 +96,19 @@ jobs:
           sfdx scanner:run --format sarif --target './**/*.cls' --category "Design,Best Practices,Performance" --outfile 'apexScanResults.sarif'  
           cd ..
 
-      - name: Upload SARIF file
+      - name: 'Upload SARIF file'
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: changed-sources/apexScanResults.sarif
           token: ${{ secrets.GITHUB_TOKEN }}
           wait-for-processing: true
+
+      - name: 'Analyze SARIF file'
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "Security"
+          token: ${{ secrets.GITHUB_TOKEN }}
+        if: success()
 
       - name: 'Check-only deploy delta changes - run specified tests'
         if: ${{ env.APEX_TESTS != 'all' }}
