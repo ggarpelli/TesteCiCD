@@ -10,7 +10,7 @@ public class novaConta {
     
     public static Account attCampos() {
         
-        Account att = [SELECT ID FROM Account Where Name = 'Conta Teste'];
+        Account att = [SELECT ID FROM Account Where Name = 'Conta Teste' LIMIT 1];
         att.Phone = '19997494747';
         update att;
         return att;
@@ -18,13 +18,4 @@ public class novaConta {
     }
     
     public static Contact newContact() {
-        Contact newContact = [SELECT ID FROM Contact Where Name = 'Conta Teste'];
-        
-       // newContact.Name = 'Guilherme';
-       //another comment here
-        newContact.LastName = 'Parise';
-        
-        insert newContact;
-            return newContact;
-    }
-}
+        Account contaTest = [SELECT Id FROM Account WHERE Name = 'Conta
