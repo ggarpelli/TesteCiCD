@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mulheres__c</fullName>
+    <label>Mulheres</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Loira</fullName>
+                <default>false</default>
+                <label>Loira</label>
+            </value>
+            <value>
+                <fullName>Morena</fullName>
+                <default>false</default>
+                <label>Morena</label>
+            </value>
+            <value>
+                <fullName>Ruiva</fullName>
+                <default>false</default>
+                <label>Ruiva</label>
+            </value>
+            <value>
+                <fullName>Careca</fullName>
+                <default>false</default>
+                <label>Careca</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
