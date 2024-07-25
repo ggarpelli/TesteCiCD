@@ -1,4 +1,0 @@
-name: "Default CodeQL config"
-queries:
-  - name: "security-and-quality"
-    uses: github/codeql-config-security-and-quality
