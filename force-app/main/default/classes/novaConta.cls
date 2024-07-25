@@ -21,6 +21,7 @@ public class novaConta {
         Contact newContact = [SELECT ID FROM Contact Where Name = 'Conta Teste'];
         
        // newContact.Name = 'Guilherme';
+       //another comment here
         newContact.LastName = 'Parise';
         
         insert newContact;
