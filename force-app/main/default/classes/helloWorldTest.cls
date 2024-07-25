@@ -14,7 +14,7 @@ public class helloWorldTest {
         chamaClasse.imprimeDay('Ter');
         chamaClasse.imprimeDay('Ters');
         chamaClasse.primeiroMetodo();
-        //to be included on Feature3
+        //to be included on Feature3 and Feature5
     }
     
 }
