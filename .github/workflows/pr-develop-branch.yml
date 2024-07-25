@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: '20.15.1'
 
       - name: 'Checkout source code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -37,7 +37,7 @@ jobs:
         if: success()
 
       - name: 'Upload tests to run'  
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tests_to_run
           path: tests_to_run.txt
@@ -81,7 +81,7 @@ jobs:
           sfdx sgd:source:delta --to "$BRANCH_ORIGEM" --from "$BRANCH_DESTINO_SHA" --output changed-sources/ --generate-delta --source force-app/ 
 
       - name: 'Upload metadata artifact'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: metadata
           path: changed-sources
@@ -93,7 +93,7 @@ jobs:
           cd ..
 
       - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: changed-sources/apexScanResults.sarif
 
