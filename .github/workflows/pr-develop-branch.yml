@@ -84,7 +84,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: metadata
-          path: changed-sources/
+          path: changed-sources
 
       - name: 'Scan code'
         run: |
