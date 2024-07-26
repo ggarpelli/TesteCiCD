@@ -16,5 +16,5 @@ public with sharing class TaskUtilTest {
         String prioridade = TaskUtil.getTaskPriority('');
         System.assertEquals(null, prioridade);
         
-    }			
-}
+    }			//test
+}//teste2
