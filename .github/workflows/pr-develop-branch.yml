@@ -56,8 +56,8 @@ jobs:
 
       - name: 'Installing sfdx git delta'
         run: | 
-          echo y | sfdx plugins:install sfdx-git-delta
-          sfdx plugins 
+          echo y | sf plugins install sfdx-git-delta
+          sf plugins 
 
       - name: 'Installing java'
         run: |
@@ -70,7 +70,7 @@ jobs:
           echo ${{ secrets.SFDX_DEV_URL}} > ./SFDX_DEV_URL.txt
 
       - name: 'Authenticate to Dev Org'
-        run: sfdx auth:sfdxurl:store -f ./SFDX_DEV_URL.txt -s -a Dev
+        run: sf org login sfdx-url -f ./SFDX_DEV_URL.txt --set-default --alias Dev
 
       - name: 'Create delta packages for new, modified or deleted metadata'
         run: | 
@@ -91,12 +91,12 @@ jobs:
           path: changed-sources
 
       - name: Installing SFDX scanner
-        run: sfdx plugins:install @salesforce/sfdx-scanner
+        run: sf plugins install @salesforce/sfdx-scanner
           
       - name: 'Scan code'
         run: |
           cd changed-sources
-          sfdx scanner:run --format sarif --target './**/*.cls' --category "Design,Best Practices,Performance,Code Style,Security" --outfile 'apexScanResults.sarif'  
+          sf scanner run --format sarif --target './**/*.cls' --category "Design,Best Practices,Performance,Code Style,Security" --outfile 'apexScanResults.sarif'  
           cd ..
 
       - name: 'Upload SARIF file'
@@ -110,12 +110,12 @@ jobs:
         if: ${{ env.APEX_TESTS != 'all' }}
         run: |
           echo ${{env.APEX_TESTS}}
-          sfdx force:source:deploy -p "changed-sources/force-app" --checkonly --testlevel RunSpecifiedTests --runtests ${{env.APEX_TESTS}} --json
+          sf project deploy start --source-dir "changed-sources/force-app" --check-only --test-level RunSpecifiedTests --runtests ${{env.APEX_TESTS}} --json
 
       - name: 'Check-only deploy delta changes - run all tests'
         if: ${{ env.APEX_TESTS == 'all' }}
         run: |
-          sfdx force:source:deploy -p "changed-sources/force-app" --checkonly --testlevel RunLocalTests  --json
+          sf project deploy start --source-dir "changed-sources/force-app" --check-only --test-level RunLocalTests  --json
 
       - name: 'Deploy destructive changes (if any)'
-        run: sfdx force:mdapi:deploy -d "changed-sources/destructiveChanges" --checkonly --ignorewarnings
+        run: sf project deploy start --metadata-dir "changed-sources/destructiveChanges" --check-only --ignore-warnings
