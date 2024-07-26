@@ -106,16 +106,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           wait-for-processing: true
 
-      - name: 'Check-only deploy delta changes - run specified tests'
+      - name: 'Validate Deployment to Org - run specified tests'
         if: ${{ env.APEX_TESTS != 'all' }}
         run: |
           echo ${{env.APEX_TESTS}}
-          sf project deploy start --source-dir "changed-sources/force-app" --check-only --test-level RunSpecifiedTests --runtests ${{env.APEX_TESTS}} --json
+          sf project deploy validate --source-dir "changed-sources/force-app" --test-level RunSpecifiedTests --runtests ${{env.APEX_TESTS}} --json
 
-      - name: 'Check-only deploy delta changes - run all tests'
+      - name: 'Validate Deployment to Org - run all tests'
         if: ${{ env.APEX_TESTS == 'all' }}
         run: |
-          sf project deploy start --source-dir "changed-sources/force-app" --check-only --test-level RunLocalTests  --json
+          sf project deploy validate --source-dir "changed-sources/force-app" --test-level RunLocalTests  --json
 
       - name: 'Deploy destructive changes (if any)'
         run: sf project deploy start --metadata-dir "changed-sources/destructiveChanges" --check-only --ignore-warnings
