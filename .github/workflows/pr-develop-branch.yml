@@ -103,10 +103,6 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: changed-sources/apexScanResults.sarif
-          token: ${{ secrets.GITHUB_TOKEN }}
-          wait-for-processing: true
-          ref: refs/heads/develop
-          sha: ${{ github.event.pull_request.head.sha }}
 
       - name: 'Validate Deployment to Org - run specified tests'
         if: ${{ env.APEX_TESTS != 'all' }}
